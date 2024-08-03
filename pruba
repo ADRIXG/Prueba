@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz cumpleaños amor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #50C878;
+            color: #4a148c;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .hidden {
+            display: none;
+        }
+        .input-container {
+            margin-bottom: 20px;
+        }
+        input[type="password"], input[type="submit"] {
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid #4a148c;
+            border-radius: 5px;
+        }
+        input[type="submit"] {
+            background-color: #4a148c;
+            color: white;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #7b1fa2;
+        }
+        .media-container img {
+            width: 500px;
+            height: 500px;
+            margin: 10px;
+            border: 3px solid #4a148c;
+            border-radius: 10px;
+        }
+        .media-container video {
+            width: 1920px;
+            height: 1080px;
+            margin: 10px;
+            border: 3px solid #4a148c;
+            border-radius: 10px;
+        }
+        .media-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .butterfly {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: url('https://www.freepnglogos.com/uploads/butterfly-png/blue-butterfly-png-23.png') no-repeat center center;
+            background-size: contain;
+            animation: float 6s infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0); }
+        }
+        .butterfly:nth-child(2) { animation-delay: 1s; left: 20%; top: 30%; }
+        .butterfly:nth-child(3) { animation-delay: 2s; left: 50%; top: 50%; }
+        .butterfly:nth-child(4) { animation-delay: 3s; left: 70%; top: 20%; }
+        .butterfly:nth-child(5) { animation-delay: 4s; left: 30%; top: 70%; }
+    </style>
+</head>
+<body>
+    <div class="butterfly" style="left: 10%; top: 20%;"></div>
+    <div class="butterfly" style="left: 20%; top: 30%;"></div>
+    <div class="butterfly" style="left: 50%; top: 50%;"></div>
+    <div class="butterfly" style="left: 70%; top: 20%;"></div>
+    <div class="butterfly" style="left: 30%; top: 70%;"></div>
+
+    <div class="container">
+        <h1>Feliz cumpleaños amor</h1>
+        <p>Espero que esto te guste, la contraseña la sabes solo tienes que recordar, para mí fue el mejor día de mi vida y cuando pude descansar tranquilo</p>
+        <div class="input-container">
+            <input type="password" id="password" placeholder="Contraseña">
+        </div>
+        <input type="submit" value="Enviar" onclick="checkPassword()">
+    </div>
+    <div class="container hidden" id="mediaSection">
+        <h2>Galería de Imágenes y Videos</h2>
+        <div class="media-container">
+            <img src="https://via.placeholder.com/500" alt="Imagen 2">
+            <img src="https://via.placeholder.com/500" alt="Imagen 3">
+            <img src="https://via.placeholder.com/500" alt="Imagen 4">
+            <video controls>
+                <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                Tu navegador no soporta el elemento de video.
+            </video>
+            <video controls>
+                <source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4">
+                Tu navegador no soporta el elemento de video.
+            </video>
+        </div>
+    </div>
+
+    <script>
+        function checkPassword() {
+            var password = document.getElementById('password').value;
+            if (password === '12345') {
+                document.querySelector('.container').classList.add('hidden');
+                document.getElementById('mediaSection').classList.remove('hidden');
+            } else {
+                alert('Amooor venga piensa un poco más.');
+            }
+        }
+    </script>
+</body>
+</html>
